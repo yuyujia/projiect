@@ -1,0 +1,26 @@
+#include <stdio.h>int  main()
+{
+ void temp(int array[],int n);
+ int a[4],i;
+ printf("enter 4 number:\n");
+ for(i=0;i<4;i++)
+  scanf("%d",&a[i]);
+  temp(a,4);
+ printf("the temp array:\n");
+ for(i=0;i<4;i++)
+ {
+  printf("%5d",a[i]);
+  printf("\n");
+ } return 0;
+}void temp(int array[],int n)
+{
+ int i,j,k,t;
+ for(i=0;i<n-1;i++)
+ {
+  k=i;
+  for(j=i+1;j<n;j++)
+   if(array[j]<array[k])
+    k=j;
+   t=array[k];array[k]=array[i];array[i]=t;
+ }
+} 
